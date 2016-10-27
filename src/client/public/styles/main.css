@@ -1,0 +1,58 @@
+html, body{
+	font-weight: 14px;
+	background:#95dfc2;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top:0;
+}
+
+#app{
+	
+}
+.mainContainer {
+	width:400px;
+	margin: 30px auto;
+	border-radius: 7px;
+	-webkit-box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	-moz-box-shadow:    4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	box-shadow:         4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	color:#000;
+	position: relative;
+}
+h3{
+	font-weight: bold;
+	color:#d85343;
+}
+h1.currentNumber{
+	text-align: center;
+	margin:10px auto;
+	width:120px;
+}
+.actionButtons{
+	display: flex;
+	padding:10px;
+	justify-content:center;
+}
+.actionButtons button {
+	margin:0 5px;
+}
+.highestScore {
+	position: absolute;
+	top:0;
+	right:-195px;
+	width:180px;
+	border-radius: 7px;
+	-webkit-box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	-moz-box-shadow:    4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	box-shadow:         4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	text-align: center;
+}
+.highestScore h3 {
+	color:#3c763d;
+}
+.lives {
+	text-align: center;
+	padding:5px;
+}
