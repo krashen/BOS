@@ -22,7 +22,7 @@ class Main extends React.Component {
 
 	render () {
 		return (
-				<div className="mainContainer alert alert-warning">
+				<div className="mainContainer">
  				  <Player whenEnding={this.getScore.bind(this)} />
 				  <ScoresTable {...this.props} />
 				</div>

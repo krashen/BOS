@@ -20,9 +20,9 @@ class Form extends React.Component {
 		return (
 			<form onSubmit={this.handleSubmit.bind(this)}>
 				<input ref="name" placeholder="Your name?" type="text" />
-				<textarea ref="comment" placeholder="What did this match meant to you?">
+				<textarea ref="comment" placeholder="Anything to say?">
 				</textarea>
-				<button className="btn btn-lg btn-danger" type="submit">Send Score</button>
+				<button type="submit">Send Score</button>
 			</form>
 		);
 	}

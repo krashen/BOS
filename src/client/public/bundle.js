@@ -29978,7 +29978,7 @@
 			value: function render() {
 				return React.createElement(
 					'div',
-					{ className: 'mainContainer alert alert-warning' },
+					{ className: 'mainContainer' },
 					React.createElement(_Player2.default, { whenEnding: this.getScore.bind(this) }),
 					React.createElement(_ScoresTable2.default, this.props)
 				);
@@ -30190,19 +30190,19 @@
 						),
 						React.createElement(
 							'h1',
-							{ className: 'alert alert-info currentNumber' },
+							{ className: 'currentNumber' },
 							this.state.currentNumber
 						),
 						React.createElement(
 							'div',
 							{ className: 'actionButtons' },
-							React.createElement(_ActionButton2.default, { bootstrapClass: 'btn-success', onClickEvent: this.compare.bind(this), innerText: 'Bigger', pred: 'bigger' }),
-							React.createElement(_ActionButton2.default, { bootstrapClass: 'btn-info', onClickEvent: this.compare.bind(this), innerText: 'Smaller', pred: 'smaller' })
+							React.createElement(_ActionButton2.default, { addClass: 'bigger', onClickEvent: this.compare.bind(this), innerText: 'Bigger', pred: 'bigger' }),
+							React.createElement(_ActionButton2.default, { addClass: 'smaller', onClickEvent: this.compare.bind(this), innerText: 'Smaller', pred: 'smaller' })
 						),
 						React.createElement(_Lives2.default, { amount: this.state.lives })
 					);
 				} else {
-					// Play again?
+					// Game ended
 					returnJSX = React.createElement(
 						'div',
 						{ className: 'playerContainer' },
@@ -30214,7 +30214,7 @@
 						),
 						React.createElement(
 							'h1',
-							{ className: 'alert alert-info currentNumber' },
+							{ className: 'currentNumber' },
 							this.state.currentNumber
 						),
 						React.createElement(_Form2.default, { onSubmitEvent: this.sendNewScoreAndRerender.bind(this) })
@@ -30237,7 +30237,7 @@
   \***************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -30245,10 +30245,9 @@
 	var React = __webpack_require__(/*! react */ 168);
 	
 	var ActionButton = function ActionButton(props) {
-		var className = "btn btn-lg " + props.bootstrapClass;
 		return React.createElement(
-			"button",
-			{ className: className, onClick: function onClick() {
+			'button',
+			{ className: props.addClass, onClick: function onClick() {
 					return props.onClickEvent(props.pred);
 				} },
 			props.innerText
@@ -30259,7 +30258,7 @@
 		onClickEvent: React.PropTypes.func.isRequired,
 		innerText: React.PropTypes.string.isRequired,
 		pred: React.PropTypes.string.isRequired,
-		bootstrapClass: React.PropTypes.string
+		addClass: React.PropTypes.string
 	};
 	
 	exports.default = ActionButton;
@@ -30351,10 +30350,10 @@
 					"form",
 					{ onSubmit: this.handleSubmit.bind(this) },
 					React.createElement("input", { ref: "name", placeholder: "Your name?", type: "text" }),
-					React.createElement("textarea", { ref: "comment", placeholder: "What did this match meant to you?" }),
+					React.createElement("textarea", { ref: "comment", placeholder: "Anything to say?" }),
 					React.createElement(
 						"button",
-						{ className: "btn btn-lg btn-danger", type: "submit" },
+						{ type: "submit" },
 						"Send Score"
 					)
 				);
@@ -30427,10 +30426,26 @@
 	
 					this.rows.push(React.createElement(
 						"div",
-						{ key: i },
-						this.scores[i].score,
-						this.scores[i].name,
-						this.scores[i].comment
+						{ className: "scoreRow", key: i },
+						React.createElement(
+							"div",
+							{ className: "scoreNameScore" },
+							React.createElement(
+								"div",
+								{ className: "scoreScore" },
+								this.scores[i].score
+							),
+							React.createElement(
+								"div",
+								{ className: "scoreName" },
+								this.scores[i].name
+							)
+						),
+						React.createElement(
+							"div",
+							{ className: "scoreComment" },
+							"\"" + this.scores[i].comment + "\""
+						)
 					));
 				}
 			}
@@ -30439,7 +30454,7 @@
 			value: function render() {
 				return React.createElement(
 					"aside",
-					{ className: "alert alert-success highestScore" },
+					{ className: "highestScore" },
 					this.rows
 				);
 			}

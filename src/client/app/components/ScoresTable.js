@@ -24,16 +24,18 @@ class ScoresTable extends React.Component {
 				break;
 			}
 
-			this.rows.push(<div key={i}>
-							{this.scores[i].score}
-							{this.scores[i].name}
-							{this.scores[i].comment}
+			this.rows.push(<div className="scoreRow" key={i}>
+				             <div className="scoreNameScore">
+				             	<div className="scoreScore">{this.scores[i].score}</div>
+								<div className="scoreName">{this.scores[i].name}</div>	
+				             </div>
+							<div className="scoreComment">{"\""+this.scores[i].comment+"\""}</div>
 						   </div>);
 		}
 	}
 	render(){
 		return (
-			<aside className="alert alert-success highestScore">
+			<aside className="highestScore">
 				{this.rows}	
 			</aside>
 		);	

@@ -120,18 +120,18 @@ class Player extends React.Component {
 			// Playing
 			returnJSX = (<div className="playerContainer">
 							<h3>Score: {this.state.score}</h3>
-							<h1 className="alert alert-info currentNumber">{this.state.currentNumber}</h1>
+							<h1 className="currentNumber">{this.state.currentNumber}</h1>
 							<div className="actionButtons">
-								<ActionButton bootstrapClass="btn-success" onClickEvent={this.compare.bind(this)} innerText="Bigger" pred="bigger" />
-								<ActionButton bootstrapClass="btn-info" onClickEvent={this.compare.bind(this)} innerText="Smaller" pred="smaller" />
+								<ActionButton addClass="bigger" onClickEvent={this.compare.bind(this)} innerText="Bigger" pred="bigger" />
+								<ActionButton addClass="smaller" onClickEvent={this.compare.bind(this)} innerText="Smaller" pred="smaller" />
 							</div>
 							<Lives amount={this.state.lives} />
 						</div>);	
 		} else {
-			// Play again?
+			// Game ended
 			returnJSX = (<div className="playerContainer">
 							<h3>Score: {this.state.score}</h3>
-							<h1 className="alert alert-info currentNumber">{this.state.currentNumber}</h1>
+							<h1 className="currentNumber">{this.state.currentNumber}</h1>
 							<Form onSubmitEvent={this.sendNewScoreAndRerender.bind(this)} />
 				  
 						</div>);

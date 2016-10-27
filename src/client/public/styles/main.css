@@ -1,58 +1,156 @@
 html, body{
-	font-weight: 14px;
-	background:#95dfc2;
-
+	font-size: 14px;
+	height: 100%;	
+	font-family: 'Indie Flower', cursive, Arial;
 }
-
+body{
+	background:url('../images/background.jpg') no-repeat;
+	background-size:cover;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+}
 h1, h2, h3, h4, h5, h6 {
-	margin-top:0;
+	margin:0;
+	padding:0;
 }
 
 #app{
 	
 }
 .mainContainer {
-	width:400px;
-	margin: 30px auto;
-	border-radius: 7px;
-	-webkit-box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.55);
-	-moz-box-shadow:    4px 4px 3px 0px rgba(50, 50, 50, 0.55);
-	box-shadow:         4px 4px 3px 0px rgba(50, 50, 50, 0.55);
+	background:url('../images/cont_background.png') no-repeat;
 	color:#000;
 	position: relative;
+	width:554px;
+	height:370px;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+    padding:20px;
 }
 h3{
 	font-weight: bold;
 	color:#d85343;
+	padding-left:60px;
+	font-size: 31px;
 }
 h1.currentNumber{
 	text-align: center;
-	margin:10px auto;
-	width:120px;
+	margin:5px auto;
+	font-size: 65px;
+	line-height: 70px;
 }
 .actionButtons{
 	display: flex;
 	padding:10px;
 	justify-content:center;
+	flex-direction:row;
 }
 .actionButtons button {
 	margin:0 5px;
+	display: block;
+	text-indent: -5000em;
+	width:139px;
+	height:59px;
+	border:none;
+	padding:00;
+	outline: none;
+	cursor: pointer;
+}
+.actionButtons button:active {
+	background-size:90% 90% !important;
+}
+.actionButtons button.bigger{
+	background:url('../images/bigger.png') no-repeat center center;
+}
+.actionButtons button.smaller{
+	background:url('../images/smaller.png') no-repeat center center;
 }
 .highestScore {
 	position: absolute;
 	top:0;
-	right:-195px;
-	width:180px;
-	border-radius: 7px;
-	-webkit-box-shadow: 4px 4px 3px 0px rgba(50, 50, 50, 0.55);
-	-moz-box-shadow:    4px 4px 3px 0px rgba(50, 50, 50, 0.55);
-	box-shadow:         4px 4px 3px 0px rgba(50, 50, 50, 0.55);
-	text-align: center;
+	right:-515px;
+	width:500px;
+	font-weight: bold;
+	
 }
-.highestScore h3 {
-	color:#3c763d;
+.scoreScore {
+	font-size: 40px;
+	color:#dd0000;
+	line-height: 37px;
+}
+.scoreRow{
+	display: flex;
+	flex-direction:row;
+	align-items:center;
+	border-bottom:#de5b5b 1px dotted;
+	padding:5px;
+}
+
+.scoreName{
+	color:#4d4e8e;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.scoreNameScore{
+	text-align: center;
+	width:20%;
+}
+.scoreComment{
+	width:80%;
+	display: flex;
+	line-height: 16px;
 }
 .lives {
 	text-align: center;
-	padding:5px;
+	padding:5px 65px;
+}
+form{
+	background:url('../images/form.png') no-repeat center center;
+	width:267px;
+	height:286px;
+	display: block;
+	margin:0 auto;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+    padding:60px 20px 00;
+}
+form input {
+	display: block;
+	border:none;
+	margin:0 auto 10px;
+	padding:8px;
+	font-family: 'Indie Flower', cursive, Arial;
+	border-radius: 2px;
+}
+form textarea {
+	display: block;
+	border:none;
+	width:100%;
+	height:114px;
+	padding:8px;
+	font-family: 'Indie Flower', cursive, Arial;
+	margin:00 auto 10px auto;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;   
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+form button {
+	background:url('../images/send.png') no-repeat center center;
+	display:block;
+	text-indent: -5000em;
+	margin:0 auto;
+	width:106px;
+	height:41px;
+	border:none;
+	outline:none;
+	cursor: pointer;
+}
+form button:active{
+	background-size: 90% 90%;
 }
